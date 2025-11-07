@@ -1,0 +1,78 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family:"Bungee Spice", sans-serif;
+    background: #3f537f;
+    line-height: 1.8;
+}
+
+header
+{
+    background: linear-gradient(90deg, #7a5295 0%, #3f537f 100% ) ;
+    border-bottom: 10px;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 20px;
+}
+
+header h1
+{
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+header p
+{
+    font-size:13px;
+}
+
+
+main
+{
+    text-align: center;
+    margin: 60px;
+    background: #f76204;
+    padding: 25px;
+    max-width: 200px;
+}
+
+
+/* ====== Seções dos botões ====== */
+
+.seção-botôes
+{
+    max-width: px;
+    font-size: ;
+    font-weight: ;
+    color: ;
+    margin: ;
+    padding-left: ;
+    padding-right: ;
+    text-shadow: ;
+}
+
+.corpo-controle
+{
+    background: #7a5295;
+}
+
+.botão-cima
+{
+    background: #7a5295;
+    padding: 20px;
+    border: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #2f4858;
+}
