@@ -12,7 +12,7 @@ body
 {
     font-family:"Bungee Spice", sans-serif;
     background: #3f537f;
-    line-height: 1.5;
+    line-height: 1.8;
 }
 
 header
@@ -21,7 +21,7 @@ header
     border-bottom: 10px;
     padding: 20px;
     text-align: center;
-    box-shadow: 20px;
+    box-shadow: 20px solid #7a5295;
 }
 
 header h1
@@ -39,7 +39,7 @@ header p
 main
 {
     text-align: center;
-    margin: 1px;
+    margin: 10px;
     padding: 25px;
     max-width: auto;
 }
@@ -47,7 +47,7 @@ main
 
 /* ====== Seções dos botões ====== */
 
-section button
+section div button
 {
     font-size: 30px;
     background-color: #7a5295;
@@ -55,53 +55,94 @@ section button
     padding: 10px;
     border-color: #7a5295;
     color: rgb(13, 156, 223);
+    box-shadow: 10px solid #7a5295;
+    border: 1px solid  #4b017c;
+    
 }
 
+/* Divisão para criar uma coluna em grid/ para posicionar os botões em cada local */
+.Controle
+{
+    /* Cria uma tabela/grade */
+    display: grid;
+    /* Define a grade em 3x3: 3 colunas e 3 linhas de tamanho igual */
+    /* columns = colunas = linha vertiacal */
+    grid-template-columns: repeat(3, 1fr);
+    /* rows = linha = linha horizontal */
+    grid-template-rows: repeat(3, 1fr);
+    /* tamanho do Controle */
+    width:  500px;
+    height: 300px;
+    margin: 50px auto;
+    /* Espaçamento entre as celulas */
+    gap: 10px;
+    
+    
+}
+
+/* Configuração dos botões  */
 
 .botão-cima
 {
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 50px;
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
+    /* Começa na linha vertiacal 2(meio) e termina na linha  vertiacal 3 */
+    grid-column: 2/3;
+     /* Começa na linha horizontal 1 e  termina linha  horizontal 2 */
+    grid-row: 1/2;
 }
 
 .botão-baixo
 {
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 50px;
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
+     /* Começa na linha vertiacal 2(meio) e termina na linha  vertiacal 3 */
+    grid-column: 2/3;
+    /* Começa na linha horizontal 3 e  termina linha  horizontal 4 */
+    grid-row: 3/4;
 }
 
 .botão-direita
 {
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 50px;
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
-    
-    /* margin-right: 500px; */
+    /* margin-bottom: 10px; */
+     /* Começa na linha vertiacal 3 e termina na linha  vertiacal 4 */
+    grid-column: 3/4;
+    /* Começa na linha horizontal 2 e  termina linha  horizontal 3 */
+    grid-row: 2/3;
 }
 
 .botão-esquerda
 {
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 50px;
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
-    /* margin-left: 500px; */
+    /* margin-bottom: 10px; */
+     /* Começa na linha vertiacal 1 e termina na linha  vertiacal 2 */
+    grid-column: 1/2;
+    /* Começa na linha horizontal 2 e  termina linha  horizontal 3 */
+    grid-row: 2/3;
 }
 
 .botão-parar
 {
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 50px;
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
+     /* Começa na linha vertiacal 2(meio) e termina na linha  vertiacal 3 */
+    grid-column: 2/3;
+    /* Começa na linha horizontal 2 e  termina linha  horizontal 3 */
+    grid-row: 2/3;
 }
