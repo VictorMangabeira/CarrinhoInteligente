@@ -12,7 +12,7 @@ body
 {
     font-family:"Bungee Spice", sans-serif;
     background: #3f537f;
-    line-height: 1.8;
+    line-height: 1.5;
 }
 
 header
@@ -82,7 +82,7 @@ section div button
 
 /* Configuração dos botões  */
 
-.botão-cima
+.botão-frente
 {
     padding: 10px;
     border-radius: 50px;
@@ -95,7 +95,7 @@ section div button
     grid-row: 1/2;
 }
 
-.botão-baixo
+.botão-tras
 {
     padding: 10px;
     border-radius: 50px;
@@ -145,4 +145,12 @@ section div button
     grid-column: 2/3;
     /* Começa na linha horizontal 2 e  termina linha  horizontal 3 */
     grid-row: 2/3;
+}
+
+/* Configurção da parte inferior da página */
+footer
+{
+    background: linear-gradient(90deg, #7a5295 0%, #3f537f 100% );
+    padding: 20px 20px;
+    text-align: center;
 }
