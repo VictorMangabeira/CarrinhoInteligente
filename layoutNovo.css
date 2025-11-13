@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+/* Variáveis de Tema (Adaptadas do seu novo layout) */
+:root {
+    --bg-color: #121212; /* Fundo escuro */
+    --card-bg: #1e1e1e; /* Fundo do controle */
+    --accent: #ff3d00; /* Cor de destaque (Laranja/Vermelho) */
+    --text: #ffffff;
+    --btn-default: #333;
+    --btn-shadow: #111;
+}
+
+/* 1. Reset Global e Box-Sizing */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Propriedades para melhorar a experiência touch */
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 2. Body (Com layout flexível para centralizar o MAIN) */
+body
+{
+    font-family:"Bungee Spice", sans-serif;
+    background: var(--bg-color); /* Fundo escuro */
+    color: var(--text);
+    line-height: 1.5;
+    
+    /* Configuração Flex para ocupar a tela e centralizar o conteúdo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Distribui header/main/footer */
+    min-height: 100vh; /* Altura total da tela */
+    padding: 10px;
+    overflow: hidden; /* Evita rolagem indesejada em mobile */
+}
+
+/* 3. Header (Estilo Clean e Moderno) */
+header
+{
+    background: none; /* Remove o gradiente */
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: none; /* Remove a sombra grande */
+    flex-shrink: 0;
+}
+
+header h1
+{
+    font-size: 1.8rem; 
+    color: var(--accent); /* Cor de destaque */
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+header p
+{
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* 4. Main (Container Principal) */
+main
+{
+    text-align: center;
+    /* Remove a margem vertical fixa, usa flex-grow para ocupar o centro */
+    margin: 0; 
+    padding: 0; 
+    width: 100%;
+    flex-grow: 1; /* Ocupa o espaço disponível */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ====== Seções dos botões (Estilo Geral) ====== */
+
+/* O container Div do seu HTML, que envolve o grid de botões */
+section div {
+    /* O container de botões agora usa o fundo do 'card' */
+    background-color: var(--card-bg);
+    padding: 15px; /* Padding interno como no seu novo layout */
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5); /* Sombra 3D */
+    border: 2px solid #333;
+}
+
+
+section div button
+{
+    /* Estilo base dos botões adaptado para o novo visual */
+    background-color: var(--btn-default);
+    border: none;
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 1.1rem; 
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.1s, transform 0.1s;
+    /* Sombra de botão pressionável (efeito 3D) */
+    box-shadow: 0 4px 0 var(--btn-shadow);
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+}
+
+/* Efeito de Clique/Toque (Adaptado do novo layout) */
+section div button:active {
+    background-color: #555; /* Cor mais clara ao pressionar */
+    transform: translateY(4px); /* Move o botão para baixo 4px */
+    box-shadow: none; /* Remove a sombra para simular que o botão foi 'pressionado' */
+}
+
+
+/* 5. Divisão de Controle (Grid Responsiva) */
+.Controle
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    
+    /* Largura Responsiva: Ocupa 80% da tela, limitado a 350px */
+    max-width: 350px; 
+    width: 80vw; 
+    
+    /* Altura proporcional à largura, garantindo que seja um quadrado em mobile */
+    height: 80vw; 
+    max-height: 350px;
+
+    /* A margem já é controlada pelo `main` e `body` flex */
+    margin: auto;
+    gap: 10px;
+}
+
+/* 6. Configuração dos botões Específicos (Cores e Posição) */
+
+/* Cores específicas para as direções */
+.botão-frente { 
+    grid-column: 2/3; grid-row: 1/2; 
+    background: #27ae60; /* Verde */
+    border-radius: 10px 10px 0 0; /* Arredonda só o topo */
+}
+.botão-frente:active { background: #1e8449; }
+
+.botão-tras { 
+    grid-column: 2/3; grid-row: 3/4; 
+    background: #c0392b; /* Vermelho */
+    border-radius: 0 0 10px 10px; /* Arredonda só a base */
+}
+.botão-tras:active { background: #922b21; }
+
+.botão-direita { 
+    grid-column: 3/4; grid-row: 2/3; 
+    background: #e67e22; /* Laranja */
+    border-radius: 0 10px 10px 0; /* Arredonda só a direita */
+}
+.botão-direita:active { background: #d35400; }
+
+.botão-esquerda { 
+    grid-column: 1/2; grid-row: 2/3; 
+    background: #2980b9; /* Azul */
+    border-radius: 10px 0 0 10px; /* Arredonda só a esquerda */
+}
+.botão-esquerda:active { background: #2471a3; }
+
+.botão-parar { 
+    grid-column: 2/3; grid-row: 2/3; 
+    background: #ecf0f1; 
+    color: #c0392b; 
+    font-size: 14px; 
+    border-radius: 50%; /* Botão STOP circular */
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+.botão-parar:active { 
+    transform: scale(0.95); /* Efeito de scale para o botão STOP */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.4); 
+}
+
+/* 7. Footer */
+footer
+{
+    background: none; /* Remove o gradiente */
+    padding: 10px 0;
+    text-align: center;
+    margin-top: auto; /* Empurra para o final da tela */
+    font-size: 0.75rem;
+    color: #555; /* Cor cinza sutil */
+    flex-shrink: 0;
+}
+
+
+/* --- MODO PAISAGEM (HORIZONTAL) --- */
+/* Garante que o grid se adapte bem quando o celular é deitado */
+@media (orientation: landscape) {
+    body {
+        padding: 5px;
+        justify-content: center;
+    }
+
+    /* Reduz o tamanho do grid e do espaçamento para caber melhor na largura */
+    .Controle {
+        max-width: 450px; 
+        width: 60vh; /* Usa a altura da viewport como base para a largura no modo paisagem */
+        height: 60vh;
+        max-height: 450px;
+        gap: 8px;
+    }
+
+    /* Ajuste fino nas fontes dos botões */
+    section div button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
