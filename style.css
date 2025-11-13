@@ -5,6 +5,8 @@
 {
     margin: 0;
     padding: 0;
+    /* 2. box-sizing: border-box; (O que ele faz)
+    Quando você define box-sizing: border-box. A largura e altura que você define para o elemento incluem o conteúdo, o padding e a border. */
     box-sizing: border-box;
 }
 
@@ -26,7 +28,7 @@ header
 
 header h1
 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 5px;
 }
 
@@ -39,7 +41,7 @@ header p
 main
 {
     text-align: center;
-    margin: 10px;
+    margin:  auto;
     padding: 25px;
     max-width: auto;
 }
@@ -49,7 +51,7 @@ main
 
 section div button
 {
-    font-size: 30px;
+    font-size: 20px;
     background-color: #7a5295;
     border-radius: 5px;
     padding: 10px;
@@ -71,8 +73,13 @@ section div button
     /* rows = linha = linha horizontal */
     grid-template-rows: repeat(3, 1fr);
     /* tamanho do Controle */
-    width:  500px;
-    height: 300px;
+   /* Usa uma largura máxima, e ocupa 90% da tela */
+    max-width: 500px; 
+    /* O uso de width: 90vw; e height: 60vw; permite que o container do controle se ajuste dinamicamente ao tamanho da tela do celular. */
+    width: 90vw; /* Usa 90% da largura da viewport */
+    height: 60vw; /* Ajusta a altura com base na largura da viewport para manter proporção */
+    min-height: 250px; /* Garante uma altura mínima para visualização */
+    
     margin: 50px auto;
     /* Espaçamento entre as celulas */
     gap: 10px;
@@ -86,7 +93,7 @@ section div button
 {
     padding: 10px;
     border-radius: 50px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     /* margin-bottom: 10px; */
     /* Começa na linha vertiacal 2(meio) e termina na linha  vertiacal 3 */
@@ -99,7 +106,7 @@ section div button
 {
     padding: 10px;
     border-radius: 50px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     /* margin-bottom: 10px; */
      /* Começa na linha vertiacal 2(meio) e termina na linha  vertiacal 3 */
@@ -112,7 +119,7 @@ section div button
 {
     padding: 10px;
     border-radius: 50px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     /* margin-bottom: 10px; */
      /* Começa na linha vertiacal 3 e termina na linha  vertiacal 4 */
@@ -125,7 +132,7 @@ section div button
 {
     padding: 10px;
     border-radius: 50px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     /* margin-bottom: 10px; */
      /* Começa na linha vertiacal 1 e termina na linha  vertiacal 2 */
@@ -138,7 +145,7 @@ section div button
 {
     padding: 10px;
     border-radius: 50px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     /* margin-bottom: 10px; */
      /* Começa na linha vertiacal 2(meio) e termina na linha  vertiacal 3 */
@@ -154,3 +161,6 @@ footer
     padding: 20px 20px;
     text-align: center;
 }
+
+/* 🧩 Media Query para telas com largura máxima de 420px (Típico de smartphones) */
+@media (max-width: 420px) {
